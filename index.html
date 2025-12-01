@@ -1077,6 +1077,35 @@
     </footer>
 
     <script>
+        // Suppress third-party script errors (from browser extensions, etc.)
+        window.addEventListener('error', function(e) {
+            // Ignore errors from third-party scripts (Google Analytics, extensions, etc.)
+            if (e.filename && (
+                e.filename.includes('google') || 
+                e.filename.includes('analytics') || 
+                e.filename.includes('content.js') ||
+                e.filename.includes('index.global.js') ||
+                e.filename.includes('vendors.bundle.js')
+            )) {
+                e.preventDefault();
+                return true;
+            }
+        }, true);
+        
+        // Suppress unhandled promise rejections from third-party scripts
+        window.addEventListener('unhandledrejection', function(e) {
+            if (e.reason && (
+                e.reason.stack && (
+                    e.reason.stack.includes('google') ||
+                    e.reason.stack.includes('analytics') ||
+                    e.reason.stack.includes('collectAutotrackRangers')
+                )
+            )) {
+                e.preventDefault();
+                return true;
+            }
+        });
+        
         // Bible API configuration
         const BIBLE_API_BASE = 'https://bible-api.com';
         const DEFAULT_TRANSLATION = 'web'; // 'web' for English, 'cuv' for Chinese
