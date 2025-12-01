@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M0DND4R80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0M0DND4R80');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get your daily bible verse of the day for inspiration and spiritual growth. Discover a new bible verse of the day every morning to start your day with God's word.">
@@ -265,6 +274,15 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.95rem;
+        }
+        
+        .verse-date {
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
         }
         
         .generator-controls {
@@ -706,6 +724,7 @@
     <div class="container">
         <div class="verse-generator" id="verseGenerator">
             <div class="verse-display" id="verseDisplay">
+                <div class="verse-date" id="verseDate"></div>
                 <div class="verse-text" id="verseText">
                     Click the button above to get your bible verse of the day
                 </div>
@@ -1021,21 +1040,40 @@
         const BIBLE_API_BASE = 'https://bible-api.com';
         const DEFAULT_TRANSLATION = 'web';
         
+        // Simple seeded random number generator for consistent results
+        function seededRandom(seed) {
+            const x = Math.sin(seed) * 10000;
+            return x - Math.floor(x);
+        }
+        
         // Generate verse of the day based on date
         async function generateVerseOfTheDay() {
             const verseText = document.getElementById('verseText');
             const verseReference = document.getElementById('verseReference');
+            const verseDate = document.getElementById('verseDate');
+            
+            // Get today's date and format it
+            const today = new Date();
+            const dateString = today.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            // Display the date
+            verseDate.textContent = dateString;
             
             // Show loading
             verseText.innerHTML = '<span class="loading"></span>';
             verseReference.textContent = '';
             
             try {
-                // Use date as seed for consistent verse of the day
-                const today = new Date();
+                // Create a consistent seed from the date (YYYYMMDD format)
+                // This ensures all users see the same verse on the same day
                 const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
                 
-                // Popular Bible books
+                // Popular Bible books with their chapter counts
                 const books = [
                     { name: 'john', chapters: 21 },
                     { name: 'psalms', chapters: 150 },
@@ -1051,17 +1089,30 @@
                     { name: 'mark', chapters: 16 },
                     { name: 'luke', chapters: 24 },
                     { name: 'ephesians', chapters: 6 },
-                    { name: 'galatians', chapters: 6 }
+                    { name: 'galatians', chapters: 6 },
+                    { name: 'isaiah', chapters: 66 },
+                    { name: 'jeremiah', chapters: 52 },
+                    { name: 'genesis', chapters: 50 },
+                    { name: 'exodus', chapters: 40 },
+                    { name: 'deuteronomy', chapters: 34 }
                 ];
                 
-                // Use date seed to select book and chapter consistently
-                const bookIndex = dateSeed % books.length;
-                const randomBook = books[bookIndex];
-                const chapter = (dateSeed % randomBook.chapters) + 1;
-                const verse = ((dateSeed * 7) % 30) + 1;
+                // Use seeded random to select book consistently
+                const bookSeed = seededRandom(dateSeed);
+                const bookIndex = Math.floor(bookSeed * books.length);
+                const selectedBook = books[bookIndex];
+                
+                // Use seeded random to select chapter consistently
+                const chapterSeed = seededRandom(dateSeed * 2);
+                const chapter = Math.floor(chapterSeed * selectedBook.chapters) + 1;
+                
+                // Use seeded random to select verse consistently
+                // Most chapters have 20-40 verses, so we'll try a reasonable range
+                const verseSeed = seededRandom(dateSeed * 3);
+                const verse = Math.floor(verseSeed * 30) + 1;
                 
                 // Build API URL
-                const apiUrl = `${BIBLE_API_BASE}/${randomBook.name}%20${chapter}:${verse}?translation=${DEFAULT_TRANSLATION}`;
+                const apiUrl = `${BIBLE_API_BASE}/${selectedBook.name}%20${chapter}:${verse}?translation=${DEFAULT_TRANSLATION}`;
                 
                 // Fetch verse from API
                 const response = await fetch(apiUrl);
@@ -1083,9 +1134,19 @@
             } catch (error) {
                 console.error('Error fetching verse of the day:', error);
                 
-                // Fallback verse
-                verseText.textContent = '"For I know the plans I have for you," declares the LORD, "plans to prosper you and not to harm you, plans to give you hope and a future."';
-                verseReference.textContent = 'Jeremiah 29:11';
+                // Fallback verse - also use date seed for consistency
+                const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+                const fallbackVerses = [
+                    { text: '"For I know the plans I have for you," declares the LORD, "plans to prosper you and not to harm you, plans to give you hope and a future."', ref: 'Jeremiah 29:11' },
+                    { text: '"Trust in the LORD with all your heart and lean not on your own understanding."', ref: 'Proverbs 3:5' },
+                    { text: '"I can do all this through him who gives me strength."', ref: 'Philippians 4:13' },
+                    { text: '"The LORD is my shepherd, I lack nothing."', ref: 'Psalm 23:1' },
+                    { text: '"Be still, and know that I am God."', ref: 'Psalm 46:10' }
+                ];
+                const fallbackIndex = Math.floor(seededRandom(dateSeed) * fallbackVerses.length);
+                const fallback = fallbackVerses[fallbackIndex];
+                verseText.textContent = fallback.text;
+                verseReference.textContent = fallback.ref;
             }
             
             // Scroll to verse generator
