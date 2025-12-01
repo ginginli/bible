@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Bible verses on various topics. Find verses about love, faith, purpose, family, and more. Comprehensive collection of meaningful Bible verses.">
+    <meta name="keywords" content="bible verses, bible verses about, scripture verses, bible quotes">
+    <link rel="canonical" href="https://your-domain.com/bible-verses.html">
+    <title>Bible Verses - Collection of Meaningful Scripture</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #6B5B73;
+            --secondary-color: #4A4A4A;
+            --accent-color: #B8860B;
+            --accent-light: #D4AF37;
+            --accent-soft: #E8D5B7;
+            --text-primary: #3D3D3D;
+            --text-secondary: #5A5A5A;
+            --text-light: #8B7D8B;
+            --bg-white: #FEFEFE;
+            --bg-cream: #FDF9F3;
+            --bg-light: #FAF7F0;
+            --bg-warm: #F5F1E8;
+            --bg-gray: #F0EDE5;
+            --border-color: #E5E0D6;
+            --shadow: 0 2px 8px rgba(107, 91, 115, 0.08);
+            --shadow-lg: 0 4px 16px rgba(107, 91, 115, 0.12);
+            --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            font-family: 'Lora', 'Crimson Text', serif;
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--bg-cream);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(232, 213, 183, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+        }
+        
+        header {
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(107, 91, 115, 0.9) 0%, rgba(90, 70, 100, 0.95) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 30%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(232, 213, 183, 0.1) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .verses-grid {
+            padding: 4rem 0 6rem;
+        }
+        
+        .verses-grid h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .verses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .verse-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .verse-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-soft);
+        }
+        
+        .verse-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .verse-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            
+            .verses-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+                <a href="index.html" class="btn-primary">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bible Verses</h1>
+                <p>Explore meaningful Bible verses on various topics and themes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verses Grid -->
+    <div class="container">
+        <div class="verses-grid">
+            <h2>Browse Bible Verses by Topic</h2>
+            <div class="verses-list">
+                <a href="longest-verse.html" class="verse-card">
+                    <h3>The Longest Verse in the Bible</h3>
+                    <p>Discover Esther 8:9, the longest verse in the Bible, and learn about its historical significance.</p>
+                </a>
+                
+                <a href="you-reap-what-you-sow.html" class="verse-card">
+                    <h3>You Reap What You Sow</h3>
+                    <p>Explore Bible verses about the principle of reaping and sowing, and how our actions have consequences.</p>
+                </a>
+                
+                <a href="honoring-father-and-mother.html" class="verse-card">
+                    <h3>Honoring Your Father and Mother</h3>
+                    <p>Find Bible verses about honoring parents and the importance of family relationships in Scripture.</p>
+                </a>
+                
+                <a href="david-and-goliath.html" class="verse-card">
+                    <h3>David and Goliath</h3>
+                    <p>Read the inspiring story of David and Goliath and discover the Bible verses that tell this classic tale of faith and courage.</p>
+                </a>
+                
+                <a href="this-too-shall-pass.html" class="verse-card">
+                    <h3>This Too Shall Pass</h3>
+                    <p>Find Bible verses about perseverance, hope, and the temporary nature of trials and difficulties.</p>
+                </a>
+                
+                <a href="love-your-neighbor.html" class="verse-card">
+                    <h3>Love Your Neighbor as Yourself</h3>
+                    <p>Explore Bible verses about loving your neighbor and the importance of showing love to others.</p>
+                </a>
+                
+                <a href="living-life-with-purpose.html" class="verse-card">
+                    <h3>Living Life with Purpose</h3>
+                    <p>Discover Bible verses about finding and living your God-given purpose in life.</p>
+                </a>
+                
+                <a href="love-never-fails.html" class="verse-card">
+                    <h3>Love Never Fails</h3>
+                    <p>Read Bible verses about the enduring nature of love and how love never fails according to Scripture.</p>
+                </a>
+                
+                <a href="catholic-bible-verses.html" class="verse-card">
+                    <h3>Catholic Bible Verses</h3>
+                    <p>Explore meaningful Bible verses from the Catholic tradition and Catholic Bible translations.</p>
+                </a>
+                
+                <a href="as-for-me-and-my-house.html" class="verse-card">
+                    <h3>As For Me and My House</h3>
+                    <p>Find the powerful Bible verse "As for me and my house, we will serve the Lord" and its meaning.</p>
+                </a>
+                
+                <a href="bible-verse-about-as-for-me-and-my-house.html" class="verse-card">
+                    <h3>Bible Verse About As For Me and My House</h3>
+                    <p>Deep dive into Joshua 24:15 and what it means to serve the Lord as a household.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bible Verse Generator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

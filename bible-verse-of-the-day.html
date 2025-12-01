@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get your daily bible verse of the day for inspiration and spiritual growth. Discover a new bible verse of the day every morning to start your day with God's word.">
+    <meta name="keywords" content="bible verse of the day, daily bible verse, verse of the day, today bible verse">
+    <link rel="canonical" href="https://your-domain.com/bible-verse-of-the-day.html">
+    <title>Bible Verse of the Day - Daily Inspiration</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #6B5B73;
+            --secondary-color: #4A4A4A;
+            --accent-color: #B8860B;
+            --accent-light: #D4AF37;
+            --accent-soft: #E8D5B7;
+            --text-primary: #3D3D3D;
+            --text-secondary: #5A5A5A;
+            --text-light: #8B7D8B;
+            --bg-white: #FEFEFE;
+            --bg-cream: #FDF9F3;
+            --bg-light: #FAF7F0;
+            --bg-warm: #F5F1E8;
+            --bg-gray: #F0EDE5;
+            --border-color: #E5E0D6;
+            --shadow: 0 2px 8px rgba(107, 91, 115, 0.08);
+            --shadow-lg: 0 4px 16px rgba(107, 91, 115, 0.12);
+            --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            font-family: 'Lora', 'Crimson Text', serif;
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--bg-cream);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(232, 213, 183, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+        }
+        
+        header {
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(107, 91, 115, 0.9) 0%, rgba(90, 70, 100, 0.95) 100%);
+            color: white;
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 30%, rgba(184, 134, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(232, 213, 183, 0.1) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-color);
+            padding: 0.875rem 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .verse-generator {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.98), rgba(253, 249, 243, 0.98));
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: -5rem auto 5rem;
+            max-width: 850px;
+            box-shadow: 0 8px 32px rgba(107, 91, 115, 0.12);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(232, 213, 183, 0.3);
+        }
+        
+        .verse-generator::before {
+            content: '"';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: var(--accent-soft);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .verse-display {
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+        
+        .verse-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            line-height: 2;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        
+        .verse-reference {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+        
+        .generator-controls {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+        
+        .features {
+            padding: 7rem 0;
+            background: var(--bg-light);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.75rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--secondary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 4.5rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-soft);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .what-is {
+            padding: 7rem 0;
+            background: var(--bg-cream);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .content-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .content-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+        
+        .content-image {
+            background: linear-gradient(135deg, var(--bg-warm) 0%, var(--bg-gray) 100%);
+            border-radius: 20px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--accent-soft);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+        }
+        
+        .how-to {
+            padding: 7rem 0;
+            background: var(--bg-warm);
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 0 auto 1.75rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .step p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .why {
+            padding: 7rem 0;
+            background: var(--bg-cream);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .benefit {
+            display: flex;
+            gap: 2rem;
+            padding: 2.25rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+        
+        .benefit:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-soft);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+            opacity: 0.85;
+        }
+        
+        .benefit-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .benefit-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .faq {
+            padding: 7rem 0;
+            background: var(--bg-light);
+        }
+        
+        .faq-list {
+            max-width: 850px;
+            margin: 4rem auto 0;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.25rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .faq-question:hover {
+            background: var(--bg-warm);
+            color: var(--primary-color);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 2rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+            font-weight: 300;
+            line-height: 1;
+        }
+        
+        .faq-item.active .faq-question {
+            background: var(--bg-warm);
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+            color: var(--accent-light);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 2rem 2rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 5rem 0 2.5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232, 213, 183, 0.3), transparent);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3.5rem;
+            margin-bottom: 3.5rem;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.75rem;
+            font-weight: 600;
+            color: var(--accent-soft);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-soft);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .verse-generator {
+                margin: -3rem 1rem 3rem;
+                padding: 3rem 2rem;
+            }
+            
+            .verse-text {
+                font-size: 1.4rem;
+            }
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-to">How To</a></li>
+                    <li><a href="#why">Why</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <a href="index.html" class="btn-primary">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="generator">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bible Verse of the Day</h1>
+                <p>Start each day with God's word. Get your bible verse of the day for daily inspiration and spiritual growth. Every bible verse of the day brings new wisdom and encouragement.</p>
+                <div class="hero-buttons">
+                    <button class="btn-secondary" onclick="generateVerseOfTheDay()">Get Today's Verse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verse Generator -->
+    <div class="container">
+        <div class="verse-generator" id="verseGenerator">
+            <div class="verse-display" id="verseDisplay">
+                <div class="verse-text" id="verseText">
+                    Click the button above to get your bible verse of the day
+                </div>
+                <div class="verse-reference" id="verseReference"></div>
+            </div>
+            <div class="generator-controls">
+                <button class="btn-primary" onclick="generateVerseOfTheDay()">Get Today's Verse</button>
+                <button class="btn-secondary" onclick="generateImage()">Generate Image</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <p class="section-subtitle">Everything you need for your daily bible verse of the day experience</p>
+            <p style="text-align: center; max-width: 800px; margin: 2rem auto 0; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                Our bible verse of the day service is designed to help you start each morning with God's word. Each bible verse of the day is carefully selected to provide inspiration, guidance, and spiritual nourishment. Whether you're new to daily devotion or have been practicing for years, our bible verse of the day feature makes it easy to receive your daily spiritual encouragement. Every bible verse of the day is unique and meaningful, helping you grow in faith one day at a time.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Daily Updates</h3>
+                    <p>Receive a fresh bible verse of the day every morning. Each bible verse of the day is unique to that specific date, ensuring you get a new bible verse of the day every time you visit. The bible verse of the day changes automatically, so you always have something new to reflect upon.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌅</div>
+                    <h3>Morning Inspiration</h3>
+                    <p>Start your day right with a meaningful bible verse of the day. Each bible verse of the day is chosen to provide encouragement and guidance for your daily journey. The bible verse of the day helps set a positive tone for your entire day, bringing God's wisdom into your morning routine.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💝</div>
+                    <h3>Spiritual Growth</h3>
+                    <p>Build a daily habit of reading Scripture with our bible verse of the day. Consistent engagement with the bible verse of the day helps deepen your faith and understanding. Each bible verse of the day contributes to your spiritual growth, creating a foundation of biblical wisdom in your life.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Easy Access</h3>
+                    <p>Access your bible verse of the day anytime, anywhere. Whether on your phone, tablet, or computer, the bible verse of the day is always available. Bookmark our page to make getting your bible verse of the day part of your daily routine.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Share Your Verse</h3>
+                    <p>Share your bible verse of the day with friends and family. Each bible verse of the day can be turned into a beautiful image to share on social media. Spread the inspiration from your bible verse of the day and encourage others in their faith journey.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Consistent Experience</h3>
+                    <p>The same bible verse of the day appears for all users on the same date, creating a shared experience. This means you can discuss the bible verse of the day with others, knowing everyone is reflecting on the same Scripture. The bible verse of the day becomes a unifying element in the Christian community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Is Section -->
+    <section class="what-is" id="what-is">
+        <div class="container">
+            <h2 class="section-title">What Is Bible Verse of the Day?</h2>
+            <p class="section-subtitle">Understanding the power of daily Scripture</p>
+            
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Your Daily Spiritual Nourishment</h3>
+                    <p>The bible verse of the day is a time-honored practice in Christian tradition, where believers start each morning by reading a selected Scripture passage. Our bible verse of the day service brings this practice to your digital life, making it easier than ever to incorporate daily Bible reading into your routine.</p>
+                    <p>Each bible verse of the day is carefully chosen to provide meaning, encouragement, and spiritual guidance. The bible verse of the day serves as a daily reminder of God's love, wisdom, and presence in your life. Whether you're facing challenges or celebrating victories, the bible verse of the day offers relevant wisdom for your current situation.</p>
+                    <p>The concept of a bible verse of the day has been embraced by millions of Christians worldwide as a way to maintain daily connection with God's word. Our bible verse of the day feature makes this practice accessible to everyone, regardless of their schedule or location. Each bible verse of the day is a gift of inspiration waiting to be discovered.</p>
+                </div>
+                <div class="content-image">
+                    📖
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Section -->
+    <section class="how-to" id="how-to">
+        <div class="container">
+            <h2 class="section-title">How To Use Bible Verse of the Day</h2>
+            <p class="section-subtitle">Get started with your daily bible verse of the day in simple steps</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Visit Daily</h3>
+                    <p>Visit our website each morning to get your bible verse of the day. The bible verse of the day updates automatically, so you'll always receive a fresh bible verse of the day. Make checking your bible verse of the day part of your morning routine for consistent spiritual growth.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Read & Reflect</h3>
+                    <p>Take time to read and meditate on your bible verse of the day. Each bible verse of the day contains wisdom that can guide your day. Reflect on how the bible verse of the day applies to your current life situation and challenges.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Apply & Share</h3>
+                    <p>Apply the lessons from your bible verse of the day throughout your day. Share your bible verse of the day with others to spread encouragement. The bible verse of the day becomes more meaningful when you share its wisdom with those around you.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Build the Habit</h3>
+                    <p>Make reading the bible verse of the day a daily habit. Consistency is key to spiritual growth. Each bible verse of the day you read builds upon the previous ones, creating a rich foundation of biblical wisdom in your life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why" id="why">
+        <div class="container">
+            <h2 class="section-title">Why Use Bible Verse of the Day?</h2>
+            <p class="section-subtitle">Discover the benefits of daily Scripture reading</p>
+            <p style="text-align: center; max-width: 800px; margin: 2rem auto 3rem; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                Using a bible verse of the day service offers numerous spiritual and practical benefits. When you start each morning with a bible verse of the day, you're setting a positive foundation for your entire day. The bible verse of the day helps you focus on God's word before the busyness of life takes over. Each bible verse of the day provides an opportunity for reflection, prayer, and spiritual growth that can transform your daily experience.
+            </p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">🌅</div>
+                    <div class="benefit-content">
+                        <h3>Morning Devotion</h3>
+                        <p>Start your day with God's word through the bible verse of the day. Each bible verse of the day provides spiritual nourishment for your morning. The bible verse of the day helps you begin each day with the right perspective and attitude, grounded in biblical truth.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">📚</div>
+                    <div class="benefit-content">
+                        <h3>Consistent Learning</h3>
+                        <p>Build your knowledge of Scripture one bible verse of the day at a time. Each bible verse of the day teaches you something new about God's character and His plan. The bible verse of the day makes Bible study accessible and manageable, even for busy schedules.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">💪</div>
+                    <div class="benefit-content">
+                        <h3>Spiritual Strength</h3>
+                        <p>Gain strength and encouragement from each bible verse of the day. The bible verse of the day provides the spiritual armor you need to face daily challenges. Regular engagement with the bible verse of the day builds resilience and faith that sustains you through difficult times.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🤝</div>
+                    <div class="benefit-content">
+                        <h3>Community Connection</h3>
+                        <p>Connect with others through the shared bible verse of the day. When everyone reads the same bible verse of the day, it creates opportunities for discussion and fellowship. The bible verse of the day becomes a common point of connection in Christian communities.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-content">
+                        <h3>Focused Reflection</h3>
+                        <p>Focus on one bible verse of the day for deeper understanding. Instead of being overwhelmed by long passages, the bible verse of the day allows you to meditate deeply on a single truth. Each bible verse of the day can be thoroughly explored and applied to your life.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">⏰</div>
+                    <div class="benefit-content">
+                        <h3>Time Efficient</h3>
+                        <p>Get spiritual nourishment quickly with the bible verse of the day. Even on your busiest days, you can take a moment to read the bible verse of the day. The bible verse of the day proves that meaningful spiritual growth doesn't require hours of study - just consistent engagement with God's word.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about bible verse of the day</p>
+            <p style="text-align: center; max-width: 800px; margin: 2rem auto 3rem; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                Many people have questions about how the bible verse of the day works and how to make the most of this daily practice. Below are answers to common questions about the bible verse of the day. Whether you're new to daily Bible reading or want to understand more about the bible verse of the day feature, these answers will help you get started with this meaningful spiritual practice.
+            </p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How does the bible verse of the day work?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The bible verse of the day is generated based on the current date, ensuring that everyone who visits on the same day sees the same bible verse of the day. This creates a shared experience where the entire community reflects on the same bible verse of the day. The bible verse of the day changes automatically at midnight, so you'll always have a fresh bible verse of the day each morning. The bible verse of the day is designed to be meaningful and relevant, providing daily spiritual nourishment through God's word.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Is the bible verse of the day free?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, the bible verse of the day is completely free to use. There are no charges, subscriptions, or hidden fees for accessing the bible verse of the day. You can visit our website daily to receive your bible verse of the day without any cost. The bible verse of the day service is provided as a free resource to help people grow in their faith through daily Scripture reading.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Can I get the bible verse of the day via email?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Currently, the bible verse of the day is available on our website. You can bookmark the page and visit daily to get your bible verse of the day. We're working on adding email subscription options so you can receive the bible verse of the day directly in your inbox each morning. This will make it even easier to access your bible verse of the day and maintain your daily devotion habit.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Why is the bible verse of the day the same for everyone?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The bible verse of the day is the same for all users on the same date to create a sense of community and shared experience. When everyone reads the same bible verse of the day, it enables discussion, reflection, and fellowship. The bible verse of the day becomes a common point of connection, allowing people to share insights and encouragement about the same bible verse of the day. This unified approach to the bible verse of the day helps build Christian community and spiritual growth.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Can I share the bible verse of the day?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely! You can share your bible verse of the day with friends, family, and on social media. Each bible verse of the day can be turned into a beautiful image for easy sharing. Sharing the bible verse of the day helps spread God's word and encourages others in their faith journey. The bible verse of the day becomes a tool for ministry and encouragement when shared with others.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        What time does the bible verse of the day change?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The bible verse of the day updates at midnight based on your local time zone. This means you'll wake up to a fresh bible verse of the day each morning. The bible verse of the day is designed to be part of your morning routine, providing a new bible verse of the day to start each day with God's word. The timing of the bible verse of the day ensures consistency and helps you build a daily habit of Scripture reading.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        How is the bible verse of the day selected?
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            The bible verse of the day is selected using a date-based algorithm that ensures variety and meaningful content. Each bible verse of the day is chosen to provide inspiration, guidance, and spiritual nourishment. The bible verse of the day selection process considers factors like relevance, diversity of books, and spiritual value. This ensures that every bible verse of the day you receive is meaningful and contributes to your spiritual growth.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bible Verse Generator</h3>
+                    <p>Your daily source of Bible inspiration. Get your bible verse of the day every morning.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-to">How To Use</a></li>
+                        <li><a href="#why">Why Use It</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="longest-verse.html">Longest Verse</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="index.html">Random Verse</a></li>
+                        <li><a href="bible-verse-of-the-day.html">Verse of the Day</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bible Verse Generator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Bible API configuration
+        const BIBLE_API_BASE = 'https://bible-api.com';
+        const DEFAULT_TRANSLATION = 'web';
+        
+        // Generate verse of the day based on date
+        async function generateVerseOfTheDay() {
+            const verseText = document.getElementById('verseText');
+            const verseReference = document.getElementById('verseReference');
+            
+            // Show loading
+            verseText.innerHTML = '<span class="loading"></span>';
+            verseReference.textContent = '';
+            
+            try {
+                // Use date as seed for consistent verse of the day
+                const today = new Date();
+                const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+                
+                // Popular Bible books
+                const books = [
+                    { name: 'john', chapters: 21 },
+                    { name: 'psalms', chapters: 150 },
+                    { name: 'proverbs', chapters: 31 },
+                    { name: 'romans', chapters: 16 },
+                    { name: '1corinthians', chapters: 16 },
+                    { name: 'philippians', chapters: 4 },
+                    { name: 'colossians', chapters: 4 },
+                    { name: '1peter', chapters: 5 },
+                    { name: 'james', chapters: 5 },
+                    { name: 'hebrews', chapters: 13 },
+                    { name: 'matthew', chapters: 28 },
+                    { name: 'mark', chapters: 16 },
+                    { name: 'luke', chapters: 24 },
+                    { name: 'ephesians', chapters: 6 },
+                    { name: 'galatians', chapters: 6 }
+                ];
+                
+                // Use date seed to select book and chapter consistently
+                const bookIndex = dateSeed % books.length;
+                const randomBook = books[bookIndex];
+                const chapter = (dateSeed % randomBook.chapters) + 1;
+                const verse = ((dateSeed * 7) % 30) + 1;
+                
+                // Build API URL
+                const apiUrl = `${BIBLE_API_BASE}/${randomBook.name}%20${chapter}:${verse}?translation=${DEFAULT_TRANSLATION}`;
+                
+                // Fetch verse from API
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`API error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Display the verse
+                if (data.text && data.reference) {
+                    verseText.textContent = `"${data.text}"`;
+                    verseReference.textContent = data.reference;
+                } else {
+                    throw new Error('Invalid API response');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching verse of the day:', error);
+                
+                // Fallback verse
+                verseText.textContent = '"For I know the plans I have for you," declares the LORD, "plans to prosper you and not to harm you, plans to give you hope and a future."';
+                verseReference.textContent = 'Jeremiah 29:11';
+            }
+            
+            // Scroll to verse generator
+            document.getElementById('verseGenerator').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+        
+        // Generate image (placeholder)
+        function generateImage() {
+            const verseText = document.getElementById('verseText').textContent;
+            const verseReference = document.getElementById('verseReference').textContent;
+            
+            if (!verseText || verseText.includes('Click')) {
+                alert('Please get your bible verse of the day first!');
+                return;
+            }
+            
+            alert('Image generation feature coming soon! This would create a shareable image of your bible verse of the day.');
+        }
+        
+        // FAQ toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Generate verse of the day on page load
+        window.addEventListener('load', function() {
+            setTimeout(generateVerseOfTheDay, 500);
+        });
+    </script>
+</body>
+</html>
+
