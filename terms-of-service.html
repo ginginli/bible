@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Random Bible Verse Generator. Read our terms and conditions for using our service.">
+    <title>Terms of Service - Random Bible Verse Generator</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #6B5B73;
+            --secondary-color: #4A4A4A;
+            --accent-color: #B8860B;
+            --accent-light: #D4AF37;
+            --accent-soft: #E8D5B7;
+            --text-primary: #3D3D3D;
+            --text-secondary: #5A5A5A;
+            --text-light: #8B7D8B;
+            --bg-white: #FEFEFE;
+            --bg-cream: #FDF9F3;
+            --bg-light: #FAF7F0;
+            --bg-warm: #F5F1E8;
+            --bg-gray: #F0EDE5;
+            --border-color: #E5E0D6;
+            --shadow: 0 2px 8px rgba(107, 91, 115, 0.08);
+            --shadow-lg: 0 4px 16px rgba(107, 91, 115, 0.12);
+            --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            font-family: 'Lora', 'Crimson Text', serif;
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--bg-cream);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(232, 213, 183, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+        }
+        
+        header {
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .content-page {
+            padding: 4rem 0 6rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .content-page .last-updated {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        
+        .content-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-page h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-page p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .content-page ul, .content-page ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .content-page li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-page {
+                padding: 2rem 1rem 4rem;
+            }
+            
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .content-page h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+                <a href="index.html" class="btn-primary">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content-page">
+            <div class="content-card">
+                <h1>Terms of Service</h1>
+                <p class="last-updated">Last Updated: January 1, 2025</p>
+                
+                <p>
+                    Welcome to Random Bible Verse Generator. These Terms of Service ("Terms") govern your access to and use of our website and services. By accessing or using our random bible verse generator, you agree to be bound by these Terms.
+                </p>
+                
+                <h2>1. Acceptance of Terms</h2>
+                
+                <p>
+                    By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                </p>
+                
+                <h2>2. Description of Service</h2>
+                
+                <p>
+                    Random Bible Verse Generator provides a free online tool that allows users to generate random bible verses. Our service uses third-party APIs to fetch bible verse content and presents it to users in an accessible format.
+                </p>
+                
+                <h2>3. Use of Service</h2>
+                
+                <h3>3.1 Permitted Use</h3>
+                <p>You may use our random bible verse generator for:</p>
+                <ul>
+                    <li>Personal spiritual growth and reflection</li>
+                    <li>Educational purposes</li>
+                    <li>Sharing bible verses with others</li>
+                    <li>Non-commercial purposes</li>
+                </ul>
+                
+                <h3>3.2 Prohibited Use</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the service for any illegal purpose</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Interfere with or disrupt the service</li>
+                    <li>Use automated systems to access the service excessively</li>
+                    <li>Reproduce, duplicate, or copy the service for commercial purposes</li>
+                    <li>Modify, adapt, or hack the service</li>
+                </ul>
+                
+                <h2>4. Intellectual Property</h2>
+                
+                <h3>4.1 Our Content</h3>
+                <p>
+                    The website design, layout, and original content are owned by Random Bible Verse Generator and are protected by copyright and other intellectual property laws.
+                </p>
+                
+                <h3>4.2 Bible Verse Content</h3>
+                <p>
+                    Bible verses displayed on our website are sourced from public domain or freely licensed translations. The copyright status of individual translations may vary. We make no claim of ownership over bible verse content.
+                </p>
+                
+                <h2>5. Third-Party Services</h2>
+                
+                <p>
+                    Our random bible verse generator relies on third-party services, including the Bible API (bible-api.com), to provide content. We are not responsible for the availability, accuracy, or content of these third-party services. Your use of third-party services is subject to their respective terms and conditions.
+                </p>
+                
+                <h2>6. Disclaimer of Warranties</h2>
+                
+                <p>
+                    THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+                </p>
+                
+                <p>
+                    We do not warrant that:
+                </p>
+                <ul>
+                    <li>The service will be uninterrupted or error-free</li>
+                    <li>Defects will be corrected</li>
+                    <li>The service is free of viruses or other harmful components</li>
+                    <li>The results obtained from using the service will be accurate or reliable</li>
+                </ul>
+                
+                <h2>7. Limitation of Liability</h2>
+                
+                <p>
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, RANDOM BIBLE VERSE GENERATOR SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES RESULTING FROM YOUR USE OF THE SERVICE.
+                </p>
+                
+                <h2>8. Indemnification</h2>
+                
+                <p>
+                    You agree to indemnify and hold harmless Random Bible Verse Generator, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of or relating to your use of the service or violation of these Terms.
+                </p>
+                
+                <h2>9. Modifications to Service</h2>
+                
+                <p>
+                    We reserve the right to modify, suspend, or discontinue the service at any time, with or without notice. We shall not be liable to you or any third party for any modification, suspension, or discontinuance of the service.
+                </p>
+                
+                <h2>10. Changes to Terms</h2>
+                
+                <p>
+                    We reserve the right to modify these Terms at any time. We will notify users of any material changes by posting the new Terms on this page and updating the "Last Updated" date. Your continued use of the service after such changes constitutes acceptance of the new Terms.
+                </p>
+                
+                <h2>11. Termination</h2>
+                
+                <p>
+                    We may terminate or suspend your access to the service immediately, without prior notice or liability, for any reason, including if you breach these Terms. Upon termination, your right to use the service will cease immediately.
+                </p>
+                
+                <h2>12. Governing Law</h2>
+                
+                <p>
+                    These Terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].
+                </p>
+                
+                <h2>13. Severability</h2>
+                
+                <p>
+                    If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.
+                </p>
+                
+                <h2>14. Contact Information</h2>
+                
+                <p>
+                    If you have any questions about these Terms of Service, please contact us at:
+                </p>
+                <p>
+                    <strong>Email:</strong> legal@your-domain.com<br>
+                    <strong>Website:</strong> <a href="index.html" style="color: var(--accent-color);">Random Bible Verse Generator</a>
+                </p>
+                
+                <h2>15. Entire Agreement</h2>
+                
+                <p>
+                    These Terms constitute the entire agreement between you and Random Bible Verse Generator regarding the use of the service and supersede all prior agreements and understandings.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bible Verse Generator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

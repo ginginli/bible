@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Random Bible Verse Generator. Learn how we protect your privacy and handle your data.">
+    <title>Privacy Policy - Random Bible Verse Generator</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #6B5B73;
+            --secondary-color: #4A4A4A;
+            --accent-color: #B8860B;
+            --accent-light: #D4AF37;
+            --accent-soft: #E8D5B7;
+            --text-primary: #3D3D3D;
+            --text-secondary: #5A5A5A;
+            --text-light: #8B7D8B;
+            --bg-white: #FEFEFE;
+            --bg-cream: #FDF9F3;
+            --bg-light: #FAF7F0;
+            --bg-warm: #F5F1E8;
+            --bg-gray: #F0EDE5;
+            --border-color: #E5E0D6;
+            --shadow: 0 2px 8px rgba(107, 91, 115, 0.08);
+            --shadow-lg: 0 4px 16px rgba(107, 91, 115, 0.12);
+            --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            font-family: 'Lora', 'Crimson Text', serif;
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background: var(--bg-cream);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(232, 213, 183, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+        }
+        
+        header {
+            background: rgba(254, 254, 254, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            letter-spacing: 0.3px;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .content-page {
+            padding: 4rem 0 6rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .content-page .last-updated {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+        }
+        
+        .content-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-page h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-page p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+        
+        .content-page ul, .content-page ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .content-page li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-color);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-page {
+                padding: 2rem 1rem 4rem;
+            }
+            
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .content-page h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+                <a href="index.html" class="btn-primary">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content-page">
+            <div class="content-card">
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: January 1, 2025</p>
+                
+                <p>
+                    At Random Bible Verse Generator, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website and services.
+                </p>
+                
+                <h2>1. Information We Collect</h2>
+                
+                <h3>1.1 Information You Provide</h3>
+                <p>
+                    Our random bible verse generator is designed to be simple and privacy-focused. We do not require you to create an account or provide personal information to use our service.
+                </p>
+                
+                <h3>1.2 Automatically Collected Information</h3>
+                <p>
+                    When you visit our website, we may automatically collect certain information, including:
+                </p>
+                <ul>
+                    <li>IP address</li>
+                    <li>Browser type and version</li>
+                    <li>Device information</li>
+                    <li>Pages visited and time spent on pages</li>
+                    <li>Referring website addresses</li>
+                </ul>
+                
+                <h2>2. How We Use Your Information</h2>
+                
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide and improve our random bible verse generator service</li>
+                    <li>Analyze website usage and trends</li>
+                    <li>Ensure website security and prevent fraud</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+                
+                <h2>3. Cookies and Tracking Technologies</h2>
+                
+                <p>
+                    We may use cookies and similar tracking technologies to enhance your experience on our website. Cookies are small data files stored on your device that help us:
+                </p>
+                <ul>
+                    <li>Remember your preferences</li>
+                    <li>Analyze website traffic</li>
+                    <li>Improve website functionality</li>
+                </ul>
+                
+                <p>
+                    You can control cookies through your browser settings. However, disabling cookies may affect your ability to use certain features of our website.
+                </p>
+                
+                <h2>4. Third-Party Services</h2>
+                
+                <h3>4.1 Bible API</h3>
+                <p>
+                    Our random bible verse generator uses the Bible API (bible-api.com) to fetch bible verses. When you generate a verse, your request is sent to this third-party service. Please refer to their privacy policy for information about how they handle data.
+                </p>
+                
+                <h3>4.2 Analytics</h3>
+                <p>
+                    We may use analytics services to understand how visitors use our website. These services may collect information about your use of our website and other websites.
+                </p>
+                
+                <h2>5. Data Security</h2>
+                
+                <p>
+                    We implement appropriate technical and organizational measures to protect your information. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+                </p>
+                
+                <h2>6. Children's Privacy</h2>
+                
+                <p>
+                    Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+                </p>
+                
+                <h2>7. Your Rights</h2>
+                
+                <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
+                <ul>
+                    <li>The right to access your personal information</li>
+                    <li>The right to correct inaccurate information</li>
+                    <li>The right to request deletion of your information</li>
+                    <li>The right to object to processing of your information</li>
+                    <li>The right to data portability</li>
+                </ul>
+                
+                <h2>8. Changes to This Privacy Policy</h2>
+                
+                <p>
+                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
+                </p>
+                
+                <h2>9. Contact Us</h2>
+                
+                <p>
+                    If you have any questions about this Privacy Policy or our data practices, please contact us at:
+                </p>
+                <p>
+                    <strong>Email:</strong> privacy@your-domain.com<br>
+                    <strong>Website:</strong> <a href="index.html" style="color: var(--accent-color);">Random Bible Verse Generator</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bible Verse Generator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
