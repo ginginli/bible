@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://random-bible-verse-generator.info/sitemap/sitemap.xml
+Sitemap: https://random-bible-verse-generator.info/sitemap.xml
 
 # Disallow specific paths if needed (currently none)
 # Disallow: /admin/
