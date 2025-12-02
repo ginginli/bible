@@ -22,6 +22,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <!-- html2canvas for image generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -283,6 +286,71 @@
             font-weight: 400;
             margin-bottom: 1.5rem;
             letter-spacing: 0.5px;
+        }
+        
+        /* Hidden image generation area for Pinterest */
+        #imageGenerator {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 1000px;
+            height: 1500px;
+            background: linear-gradient(135deg, #FDF9F3 0%, #FAF7F0 100%);
+            padding: 80px 60px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #imageGenerator .image-date {
+            font-family: 'Lora', serif;
+            font-size: 28px;
+            color: #8B7D8B;
+            margin-bottom: 40px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        #imageGenerator .image-verse {
+            font-family: 'Crimson Text', serif;
+            font-size: 48px;
+            line-height: 1.6;
+            color: #3D3D3D;
+            margin-bottom: 50px;
+            font-style: italic;
+            font-weight: 400;
+            max-width: 800px;
+        }
+        
+        #imageGenerator .image-reference {
+            font-family: 'Lora', serif;
+            font-size: 32px;
+            color: #B8860B;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+        }
+        
+        #imageGenerator .image-website {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            color: #6B5B73;
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 2px solid #E5E0D6;
+            width: 100%;
+        }
+        
+        #imageGenerator .image-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
         
         .generator-controls {
@@ -732,8 +800,19 @@
             </div>
             <div class="generator-controls">
                 <button class="btn-primary" onclick="generateVerseOfTheDay()">Get Today's Verse</button>
-                <button class="btn-secondary" onclick="generateImage()">Generate Image</button>
+                <button class="btn-secondary" onclick="generateImage()">Generate Image for Pinterest</button>
             </div>
+        </div>
+    </div>
+    
+    <!-- Hidden image generator for Pinterest (1000x1500px) -->
+    <div id="imageGenerator" style="display: none;">
+        <div class="image-date" id="imageDate"></div>
+        <div class="image-verse" id="imageVerse"></div>
+        <div class="image-reference" id="imageReference"></div>
+        <div class="image-website">
+            <div class="image-logo">✝ Bible Verse Generator</div>
+            <div>random-bible-verse-generator.info</div>
         </div>
     </div>
 
@@ -1156,17 +1235,61 @@
             });
         }
         
-        // Generate image (placeholder)
-        function generateImage() {
+        // Generate image for Pinterest
+        async function generateImage() {
             const verseText = document.getElementById('verseText').textContent;
             const verseReference = document.getElementById('verseReference').textContent;
+            const verseDate = document.getElementById('verseDate').textContent;
             
             if (!verseText || verseText.includes('Click')) {
                 alert('Please get your bible verse of the day first!');
                 return;
             }
             
-            alert('Image generation feature coming soon! This would create a shareable image of your bible verse of the day.');
+            // Update hidden image generator with current verse data
+            document.getElementById('imageDate').textContent = verseDate;
+            document.getElementById('imageVerse').textContent = verseText.replace(/"/g, ''); // Remove quotes
+            document.getElementById('imageReference').textContent = verseReference;
+            
+            // Show the image generator temporarily
+            const imageGen = document.getElementById('imageGenerator');
+            imageGen.style.display = 'flex';
+            
+            // Wait a bit for fonts to load
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            try {
+                // Generate image using html2canvas
+                const canvas = await html2canvas(imageGen, {
+                    width: 1000,
+                    height: 1500,
+                    scale: 2, // Higher quality
+                    useCORS: true,
+                    backgroundColor: '#FDF9F3',
+                    logging: false
+                });
+                
+                // Convert to blob and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    const dateStr = new Date().toISOString().split('T')[0];
+                    link.download = `bible-verse-${dateStr}.png`;
+                    link.href = url;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    
+                    // Hide image generator again
+                    imageGen.style.display = 'none';
+                    
+                    alert('Image generated successfully! You can now share it on Pinterest.');
+                }, 'image/png');
+                
+            } catch (error) {
+                console.error('Error generating image:', error);
+                alert('Error generating image. Please try again.');
+                imageGen.style.display = 'none';
+            }
         }
         
         // FAQ toggle
