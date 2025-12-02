@@ -19,28 +19,34 @@
 
 ### 1.2 获取 Board ID
 
-**方法 A：从 URL 获取（简单）**
+你的 Board URL：`https://www.pinterest.com/ljjy02/daily-bible-verse/`
 
-1. 在 Pinterest 创建或选择一个 Board（如 "Daily Bible Verses"）
-2. 打开 Board 页面
-3. Board ID 在 URL 中，格式可能是：
-   - `pinterest.com/username/board-name/`
-   - 或通过浏览器开发者工具查看
+**方法 A：使用辅助脚本（最简单）⭐ 推荐**
 
-**方法 B：通过 API 获取（推荐）**
+1. 确保已设置 `PINTEREST_ACCESS_TOKEN` 在 `.env` 文件中
+2. 运行脚本：
+   ```bash
+   cd automation
+   npm install
+   node get-board-id.js
+   ```
+3. 脚本会列出所有 Boards 并显示 Board ID
+4. 找到 "daily-bible-verse" 的 Board ID 并复制
+
+**方法 B：通过 API 手动获取**
 
 1. 使用获取的 Access Token
 2. 访问：`https://api.pinterest.com/v5/boards`
 3. 在请求头添加：`Authorization: Bearer YOUR_ACCESS_TOKEN`
-4. 查看返回的 JSON，找到你的 Board ID
+4. 查看返回的 JSON，找到 "daily-bible-verse" 的 Board ID
 
-**方法 C：使用测试脚本**
+**方法 C：从 Board URL 获取**
 
-```bash
-cd automation
-npm install
-node get-pinterest-token.js
-```
+Board URL 格式：`pinterest.com/username/board-name/`
+- 你的用户名：`ljjy02`
+- Board 名称：`daily-bible-verse`
+
+但 Board ID 需要通过 API 获取，不能直接从 URL 提取。
 
 ---
 
