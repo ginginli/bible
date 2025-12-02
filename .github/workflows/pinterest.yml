@@ -1,0 +1,34 @@
+name: Daily Pinterest Post
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 每天 UTC 8:00 (可调整时区)
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: |
+          cd automation
+          npm install
+      
+      - name: Generate and post to Pinterest
+        run: |
+          cd automation
+          npm start
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          WEBSITE_URL: https://random-bible-verse-generator.info
+          BIBLE_VERSE_PAGE: https://random-bible-verse-generator.info/bible-verse-of-the-day.html
+
