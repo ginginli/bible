@@ -2,11 +2,7 @@ name: Daily Pinterest Post
 
 on:
   schedule:
-    # 美国东部时间 0:00 (EST/EDT)
-    # EST (11月-3月): UTC-5, 所以 UTC 5:00 = EST 0:00
-    # EDT (3月-11月): UTC-4, 所以 UTC 5:00 = EDT 1:00
-    # 设置为 UTC 5:00 以匹配 EST 0:00
-    - cron: '0 5 * * *'  # 每天 UTC 5:00 = 美国东部时间 0:00 (EST)
+    - cron: '0 8 * * *'  # 每天 UTC 8:00 (可调整时区)
   workflow_dispatch:  # 允许手动触发
 
 jobs:
