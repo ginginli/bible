@@ -100,11 +100,12 @@ async function postToPinterest(imagePath, verseData) {
         throw new Error('Pinterest credentials not configured');
     }
     
-    // Read image file
+    // Read image file and convert to base64
     const imageBuffer = fs.readFileSync(imagePath);
     const imageBase64 = imageBuffer.toString('base64');
     
-    // Create pin
+    // Create pin according to Pinterest API v5 documentation
+    // Reference: https://developers.pinterest.com/docs/api/v5/pins-create
     const pinData = {
         board_id: boardId,
         media_source: {
@@ -119,6 +120,8 @@ async function postToPinterest(imagePath, verseData) {
     };
     
     try {
+        // POST /v5/pins - Create Pin
+        // Documentation: https://developers.pinterest.com/docs/api/v5/pins-create
         const response = await axios.post(
             'https://api.pinterest.com/v5/pins',
             pinData,
