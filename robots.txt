@@ -12,16 +12,129 @@ Allow: /
 # 网站地图
 Sitemap: https://random-bible-verse-generator.info/sitemap.xml
 
-# AI爬虫特定规则
+# AI爬虫特定规则 - 允许所有主流AI访问
+
+# OpenAI
 User-agent: GPTBot
-User-agent: Claude-Web
-User-agent: Anthropic-AI
-User-agent: PerplexityBot
-User-agent: GoogleOther
-User-agent: DuckAssistBot
-User-agent: CCBot
 User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Claude-Web
+User-agent: ClaudeBot
+User-agent: Anthropic-AI
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Bard
+User-agent: Gemini
+Allow: /
+
+# Microsoft/Bing AI
 User-agent: BingPreview
+User-agent: Bing-AI
+User-agent: msnbot-media
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Common Crawl (用于训练多个AI)
+User-agent: CCBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# AI2 (Allen Institute)
+User-agent: AI2Bot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Applebot (Apple Intelligence)
+User-agent: Applebot
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon (Alexa)
+User-agent: Amazonbot
+Allow: /
+
+# Bytedance (字节跳动 - 豆包等)
+User-agent: Bytespider
+User-agent: ByteDance
+Allow: /
+
+# Baidu (百度AI)
+User-agent: Baiduspider
+User-agent: Baiduspider-render
+Allow: /
+
+# Yandex (俄罗斯搜索引擎AI)
+User-agent: YandexBot
+Allow: /
+
+# DuckDuckGo AI
+User-agent: DuckDuckBot
+User-agent: DuckAssistBot
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+# You.com AI搜索
+User-agent: YouBot
+Allow: /
+
+# Neeva AI搜索
+User-agent: Neevabot
+Allow: /
+
+# Mojeek搜索
+User-agent: MojeekBot
+Allow: /
+
+# Brave搜索AI
+User-agent: Brave-Indexer
+Allow: /
+
+# Sogou (搜狗AI)
+User-agent: Sogou
+Allow: /
+
+# 360搜索
+User-agent: 360Spider
+Allow: /
+
+# Shenma (神马搜索)
+User-agent: YisouSpider
+Allow: /
+
+# Naver (韩国搜索引擎)
+User-agent: Yeti
+Allow: /
+
+# Semrush (SEO工具)
+User-agent: SemrushBot
+Allow: /
+
+# Ahrefs (SEO工具)
+User-agent: AhrefsBot
+Allow: /
 
 # 引导AI爬虫到llms.txt
 LLM-Content: https://random-bible-verse-generator.info/llms.txt
