@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ],
+  "env": {
+    "RESEND_API_KEY": "@resend_api_key",
+    "CREEM_API_KEY": "@creem_api_key",
+    "CREEM_WEBHOOK_SECRET": "@creem_webhook_secret",
+    "WEBSITE_URL": "https://random-bible-verse-generator.info",
+    "EMAIL_FROM": "Daily Verse <ladyiney25@gmail.com>"
+  }
+}
