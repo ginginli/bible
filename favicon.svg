@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 背景 -->
+  <rect width="100" height="100" fill="#5B4B63" rx="20"/>
+  
+  <!-- 圣经书本 -->
+  <g>
+    <!-- 书本主体 -->
+    <rect x="25" y="20" width="50" height="60" fill="#E8D5B7" rx="3"/>
+    
+    <!-- 书脊阴影 -->
+    <rect x="25" y="20" width="8" height="60" fill="#C9A236" rx="3"/>
+    
+    <!-- 书页效果 -->
+    <line x1="35" y1="20" x2="35" y2="80" stroke="#5B4B63" stroke-width="1" opacity="0.2"/>
+    <line x1="40" y1="20" x2="40" y2="80" stroke="#5B4B63" stroke-width="0.5" opacity="0.1"/>
+    
+    <!-- 十字架在书本上 -->
+    <g fill="#A67C00">
+      <!-- 竖线 -->
+      <rect x="47" y="35" width="6" height="30" rx="1"/>
+      <!-- 横线 -->
+      <rect x="40" y="45" width="20" height="6" rx="1"/>
+    </g>
+    
+    <!-- 书本底部阴影 -->
+    <ellipse cx="50" cy="82" rx="25" ry="3" fill="#000" opacity="0.15"/>
+  </g>
+</svg>
