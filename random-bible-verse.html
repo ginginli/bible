@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Ahrefs Analytics -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="xaIveR6bp+PyFcPxTDYhSA" async></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M0DND4R80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0M0DND4R80');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get a random Bible verse instantly. Discover inspiring scripture for daily encouragement, faith, and spiritual growth. New random verse every visit.">
+    <title>Random Bible Verse - Daily Scripture Generator</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Random Bible Verse Generator",
+      "description": "Get a random Bible verse for daily inspiration and spiritual encouragement",
+      "mainEntity": {
+        "@type": "CreativeWork",
+        "name": "Random Bible Verse",
+        "text": "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+        "citation": "1 Thessalonians 5:16-18"
+      }
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            color: #2D2D2D;
+            background: #FDF9F3;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5B4B63;
+            text-decoration: none;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #5B4B63;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #4A4A4A;
+            margin-bottom: 3rem;
+        }
+        
+        .verse-generator {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .verse-display {
+            min-height: 200px;
+            padding: 2rem;
+            background: #F8F5F0;
+            border-radius: 12px;
+            border-left: 4px solid #A67C00;
+            margin-bottom: 2rem;
+        }
+        
+        .verse-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: #2D2D2D;
+            margin-bottom: 1.5rem;
+        }
+        
+        .verse-reference {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            color: #A67C00;
+            font-weight: 600;
+        }
+        
+        .generate-btn {
+            background: linear-gradient(135deg, #5B4B63, #A67C00);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        .featured-verses {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        .featured-verses h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #5B4B63;
+            margin-bottom: 1.5rem;
+        }
+        
+        .verse-card {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #F8F5F0;
+            border-radius: 12px;
+            border-left: 3px solid #A67C00;
+        }
+        
+        .verse-card .text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #2D2D2D;
+            margin-bottom: 0.5rem;
+        }
+        
+        .verse-card .ref {
+            color: #A67C00;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #5B4B63, #A67C00);
+            border-radius: 16px;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #5B4B63;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Random Bible Verse Generator</h1>
+        <p class="intro">Click the button below to receive a random Bible verse for inspiration and encouragement.</p>
+        
+        <!-- 随机经文生成器 -->
+        <div class="verse-generator">
+            <div class="verse-display" id="verseDisplay">
+                <div class="verse-text" id="verseText">
+                    "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus."
+                </div>
+                <div class="verse-reference" id="verseReference">1 Thessalonians 5:16-18</div>
+            </div>
+            <button class="generate-btn" onclick="generateRandomVerse()">Generate New Verse</button>
+        </div>
+        
+        <!-- 精选经文 -->
+        <div class="featured-verses">
+            <h2>Popular Random Bible Verses</h2>
+            
+            <div class="verse-card">
+                <div class="text">"The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?"</div>
+                <div class="ref">Psalm 27:1</div>
+            </div>
+            
+            <div class="verse-card">
+                <div class="text">"Cast all your anxiety on him because he cares for you."</div>
+                <div class="ref">1 Peter 5:7</div>
+            </div>
+            
+            <div class="verse-card">
+                <div class="text">"But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."</div>
+                <div class="ref">Isaiah 40:31</div>
+            </div>
+            
+            <div class="verse-card">
+                <div class="text">"And we know that in all things God works for the good of those who love him, who have been called according to his purpose."</div>
+                <div class="ref">Romans 8:28</div>
+            </div>
+            
+            <div class="verse-card">
+                <div class="text">"The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace."</div>
+                <div class="ref">Numbers 6:24-26</div>
+            </div>
+        </div>
+        
+        <!-- 行动号召 -->
+        <div class="cta">
+            <h2>Get Daily Bible Verses</h2>
+            <p>Receive a carefully selected Bible verse in your inbox every morning</p>
+            <a href="premium.html" class="btn">Subscribe Now</a>
+        </div>
+        
+        <!-- FAQ 部分 -->
+        <div class="featured-verses">
+            <h2>About Random Bible Verses</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">Why read random Bible verses?</h3>
+                <p>Random Bible verses can provide unexpected encouragement and guidance. Many believers find that God speaks to them through seemingly random scripture, offering exactly what they need to hear at the right moment.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">How often should I read Bible verses?</h3>
+                <p>Daily Bible reading is a powerful spiritual practice. Even a single verse each day can provide guidance, comfort, and strengthen your faith. Consider making it part of your morning routine.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">Can I share these verses?</h3>
+                <p>Absolutely! Feel free to share any verse that speaks to you with friends, family, or on social media. God's Word is meant to be shared and can bless others.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const verses = [
+            {
+                text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+                ref: "Jeremiah 29:11"
+            },
+            {
+                text: "The Lord is my shepherd; I shall not want.",
+                ref: "Psalm 23:1"
+            },
+            {
+                text: "I can do all things through Christ who strengthens me.",
+                ref: "Philippians 4:13"
+            },
+            {
+                text: "Trust in the Lord with all your heart and lean not on your own understanding.",
+                ref: "Proverbs 3:5"
+            },
+            {
+                text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+                ref: "Joshua 1:9"
+            },
+            {
+                text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+                ref: "John 3:16"
+            },
+            {
+                text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+                ref: "Psalm 34:18"
+            },
+            {
+                text: "Come to me, all you who are weary and burdened, and I will give you rest.",
+                ref: "Matthew 11:28"
+            },
+            {
+                text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+                ref: "Philippians 4:6"
+            },
+            {
+                text: "The Lord is my light and my salvation—whom shall I fear?",
+                ref: "Psalm 27:1"
+            }
+        ];
+        
+        function generateRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            const verse = verses[randomIndex];
+            
+            document.getElementById('verseText').textContent = `"${verse.text}"`;
+            document.getElementById('verseReference').textContent = verse.ref;
+        }
+    </script>
+</body>
+</html>
