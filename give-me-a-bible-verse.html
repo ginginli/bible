@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Ahrefs Analytics -->
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="xaIveR6bp+PyFcPxTDYhSA" async></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M0DND4R80"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0M0DND4R80');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get an inspiring Bible verse instantly. Random Bible verses for encouragement, strength, and faith. New verse every time you visit.">
+    <title>Give Me a Bible Verse - Random Bible Verse Generator</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- 结构化数据 - 帮助 Google 理解内容 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Give me a Bible verse",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand. Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go. - Isaiah 41:10 & Joshua 1:9"
+        }
+      }]
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            color: #2D2D2D;
+            background: #FDF9F3;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5B4B63;
+            text-decoration: none;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #5B4B63;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            font-size: 1.15rem;
+            color: #4A4A4A;
+            margin-bottom: 3rem;
+        }
+        
+        .featured-verse {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+            border-left: 4px solid #A67C00;
+        }
+        
+        blockquote {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: #2D2D2D;
+            margin-bottom: 1.5rem;
+        }
+        
+        cite {
+            display: block;
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            color: #A67C00;
+            font-weight: 600;
+            font-style: normal;
+            text-align: right;
+        }
+        
+        .more-verses {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        .more-verses h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #5B4B63;
+            margin-bottom: 1.5rem;
+        }
+        
+        .verse-list {
+            list-style: none;
+        }
+        
+        .verse-list li {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #F8F5F0;
+            border-radius: 12px;
+            border-left: 3px solid #A67C00;
+        }
+        
+        .verse-list .verse-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #2D2D2D;
+            margin-bottom: 0.5rem;
+        }
+        
+        .verse-list .verse-ref {
+            color: #A67C00;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, #5B4B63, #A67C00);
+            border-radius: 16px;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #5B4B63;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">✝ Bible Verse Generator</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h1>Give Me a Bible Verse</h1>
+        <p class="intro">Here's an inspiring Bible verse for you today. Let God's Word encourage and strengthen you.</p>
+        
+        <!-- 主要经文 - 针对 Featured Snippet 优化 -->
+        <div class="featured-verse">
+            <blockquote>
+                "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand. Have I not commanded you? Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go."
+            </blockquote>
+            <cite>Isaiah 41:10 & Joshua 1:9</cite>
+        </div>
+        
+        <!-- 更多经文 -->
+        <div class="more-verses">
+            <h2>More Inspiring Bible Verses</h2>
+            <ul class="verse-list">
+                <li>
+                    <div class="verse-text">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."</div>
+                    <div class="verse-ref">John 3:16</div>
+                </li>
+                <li>
+                    <div class="verse-text">"I can do all things through Christ who strengthens me."</div>
+                    <div class="verse-ref">Philippians 4:13</div>
+                </li>
+                <li>
+                    <div class="verse-text">"The Lord is my shepherd; I shall not want."</div>
+                    <div class="verse-ref">Psalm 23:1</div>
+                </li>
+                <li>
+                    <div class="verse-text">"Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight."</div>
+                    <div class="verse-ref">Proverbs 3:5-6</div>
+                </li>
+                <li>
+                    <div class="verse-text">"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."</div>
+                    <div class="verse-ref">Joshua 1:9</div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- 行动号召 -->
+        <div class="cta">
+            <h2>Want a New Verse Every Day?</h2>
+            <p>Get random Bible verses delivered to your inbox daily</p>
+            <a href="premium.html" class="btn">Subscribe to Daily Verses</a>
+        </div>
+        
+        <!-- FAQ 部分 - 帮助 SEO -->
+        <div class="more-verses">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">How do I get a random Bible verse?</h3>
+                <p>Simply visit our <a href="index.html" style="color: #A67C00;">homepage</a> and click "Generate Verse" to receive a new random Bible verse instantly. Each click gives you a different verse for inspiration.</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">What is the best Bible verse for encouragement?</h3>
+                <p>Isaiah 41:10 is one of the most encouraging verses: "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand."</p>
+            </div>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #5B4B63; margin-bottom: 0.5rem;">Can I get a Bible verse every day?</h3>
+                <p>Yes! Subscribe to our <a href="premium.html" style="color: #A67C00;">premium service</a> to receive a carefully selected Bible verse delivered to your email inbox every morning.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
