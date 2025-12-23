@@ -1,0 +1,9 @@
+# HTTP to HTTPS redirects
+http://random-bible-verse-generator.info/* https://random-bible-verse-generator.info/:splat 301!
+http://www.random-bible-verse-generator.info/* https://random-bible-verse-generator.info/:splat 301!
+
+# WWW to non-WWW redirects
+https://www.random-bible-verse-generator.info/* https://random-bible-verse-generator.info/:splat 301!
+
+# Index.html redirects
+/index.html / 301!
